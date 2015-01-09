@@ -1,3 +1,14 @@
+# Version 0.2.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Rename getLookupName() to getLookup() in Resource/EnterpriseBean annotation
+* Remove unnecessary mappedName attribute from annotations
+
 # Version 0.1.6
 
 ## Bugfixes
