@@ -51,16 +51,6 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
     }
 
     /**
-     * Returns the value of the mapped name attribute.
-     *
-     * @return string The annotations mapped name attribute
-     */
-    public function getMappedName()
-    {
-        return $this->values[AnnotationKeys::MAPPED_NAME];
-    }
-
-    /**
      * Returns the value of the description attribute.
      *
      * @return string The annotations description attribute

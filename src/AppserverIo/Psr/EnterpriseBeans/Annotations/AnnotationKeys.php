@@ -46,13 +46,6 @@ class AnnotationKeys
     const NAME = 'name';
 
     /**
-     * Key for the annotation property 'mappedName'.
-     *
-     * @var string
-     */
-    const MAPPED_NAME = 'mappedName';
-
-    /**
      * Key for the annotation property 'beanInterface'.
      *
      * @var string
@@ -67,7 +60,7 @@ class AnnotationKeys
     const BEAN_NAME = 'beanName';
 
     /**
-     * Key for the annotation property 'lookup'.
+     * Key for the annotation property 'lookupName'.
      *
      * @var string
      */
@@ -149,4 +142,11 @@ class AnnotationKeys
      * @var string
      */
     const YEAR = 'year';
+
+    /**
+     * Key for the annotation property 'type'.
+     *
+     * @var string
+     */
+    const TYPE = 'type';
 }

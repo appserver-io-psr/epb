@@ -28,20 +28,15 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
 /**
  * Annotation implementation representing a @EnterpriseBean annotation on a property.
  *
- * The name() attribute refers to what the naming context name will be for the referenced enterprise bean.
+ * The name attribute refers to what the naming context name will be for the referenced enterprise bean.
  *
- * The beanInterface() attribute is the interface you are interested in and usually is used by the container
+ * The beanInterface attribute is the interface you are interested in and usually is used by the container
  * to distinguish whether you want a remote or local reference to the enterprise bean.
  *
- * The beanName() is the name of the enterprise bean referenced. It is equal to either the value you specify
+ * The beanName is the name of the enterprise bean referenced. It is equal to either the value you specify
  * in the @Stateless->name() or @Stateful->name() annotation.
- *
- * The mappedName() attribute is a placeholder for a vendor-specific identifier. This identifier may be a
- * key into the vendor’s global registry. Many vendors store references to enterprise beans within the
- * global naming context tree so that clients can reference them, and mappedName() may reference that global
- * naming context name.
 ￼ * ￼
- * The mappedName() attribute, defines the naming context name that should be used to find the target enterprise
+ * The lookup attribute, defines the naming context name that should be used to find the target enterprise
  * bean reference. When placed on the bean class, the @EnterpriseBean annotation will register a reference into
  * the naming context.
  *
@@ -88,7 +83,7 @@ class EnterpriseBean extends AbstractBeanAnnotation
     /**
      * Returns the value of the bean name attribute.
      *
-     * @return string The annotations bean nName attribute
+     * @return string The annotations bean Name attribute
      */
     public function getBeanName()
     {
@@ -96,33 +91,12 @@ class EnterpriseBean extends AbstractBeanAnnotation
     }
 
     /**
-     * Helper method that returns the naming context lookup name specified
-     * as annotation attribute.
+     * Returns the value of the lookup name attribute.
      *
-     * The following order is use to return the lookup name:
-     *
-     * 1. The name attribute
-     * 2. The beanName attribute
-     * 3. The mappedName attribute
-     *
-     * @return string The lookup name used to resolve the enterprise bean reference
+     * @return string The annotations lookup name attribute
      */
-    public function getLookupName()
+    public function getLookup()
     {
-
-        // first try to use @Enterprise(name="MyBean")
-        if ($identifier = $this->getName()) {
-            return $identifier;
-        }
-
-        // second try to use @Enterprise(beanName="MyBean")
-        if ($identifier = $this->getBeanName()) {
-            return $identifier;
-        }
-
-        // third try to use @Enterprise(mappedName="MyBean")
-        if ($identifier = $this->getMappedName()) {
-            return $identifier;
-        }
+        return $this->values[AnnotationKeys::LOOKUP];
     }
 }

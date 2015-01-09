@@ -59,6 +59,16 @@ class Resource extends AbstractBeanAnnotation
     }
 
     /**
+     * Returns the value of the type attribute.
+     *
+     * @return string The annotations type attribute
+     */
+    public function getType()
+    {
+        return $this->values[AnnotationKeys::TYPE];
+    }
+
+    /**
      * Returns the value of the bean interface attribute.
      *
      * @return string The annotations bean interface attribute
@@ -71,7 +81,7 @@ class Resource extends AbstractBeanAnnotation
     /**
      * Returns the value of the bean name attribute.
      *
-     * @return string The annotations bean nName attribute
+     * @return string The annotations bean name attribute
      */
     public function getBeanName()
     {
@@ -79,33 +89,12 @@ class Resource extends AbstractBeanAnnotation
     }
 
     /**
-     * Helper method that returns the naming context lookup name specified
-     * as annotation attribute.
+     * Returns the value of the lookup name attribute.
      *
-     * The following order is use to return the lookup name:
-     *
-     * 1. The name attribute
-     * 2. The beanName attribute
-     * 3. The mappedName attribute
-     *
-     * @return string The lookup name used to resolve the enterprise bean reference
+     * @return string The annotations lookup name attribute
      */
-    public function getLookupName()
+    public function getLookup()
     {
-
-        // first try to use @Resource(name="MyResource")
-        if ($identifier = $this->getName()) {
-            return $identifier;
-        }
-
-        // second try to use @Resource(beanName="MyResource")
-        if ($identifier = $this->getBeanName()) {
-            return $identifier;
-        }
-
-        // third try to use @Resource(mappedName="MyResource")
-        if ($identifier = $this->getMappedName()) {
-            return $identifier;
-        }
+        return $this->values[AnnotationKeys::LOOKUP];
     }
 }
