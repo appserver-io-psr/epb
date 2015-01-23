@@ -1,3 +1,13 @@
+# Version 0.3.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Merge with appserver-io-psr/persistencecontainerprotocol
+
 # Version 0.2.0
 
 ## Bugfixes
