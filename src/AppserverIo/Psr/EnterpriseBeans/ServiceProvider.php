@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\TimedObjectInterface
+ * AppserverIo\Psr\EnterpriseBeans\ServiceProvider
  *
  * NOTICE OF LICENSE
  *
@@ -14,7 +14,6 @@
  * @category   Appserver
  * @package    Psr
  * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
  * @author     Tim Wagner <tw@appserver.io>
  * @copyright  2014 TechDivision GmbH <info@appserver.io>
  * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
@@ -25,36 +24,31 @@
 namespace AppserverIo\Psr\EnterpriseBeans;
 
 /**
- * The TimedObject interface contains the callback method that is used
- * to deliver timer expiration notifications. It is implemented by an
- * entity bean or stateless session bean or message-driven bean class.
+ * The interface for all service providers of the persistence container.
  *
  * @category   Appserver
  * @package    Psr
  * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
  * @author     Tim Wagner <tw@appserver.io>
  * @copyright  2014 TechDivision GmbH <info@appserver.io>
  * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link       https://github.com/appserver-io-psr/epb
  * @link       http://www.appserver.io
  */
-interface TimedObjectInterface
+interface ServiceProvider
 {
 
     /**
-     * The name of the default timeout method.
+     * Returns the service name.
      *
-     * @var string
+     * @return string
      */
-    const DEFAULT_TIMEOUT_METHOD = 'timeout';
+    public function getServiceName();
 
     /**
-     * Invoked by the container upon timer expiration.
+     * Returns the unique service identifier.
      *
-     * @param \AppserverIo\Psr\EnterpriseBeans\TimerInterface $timer Timer whose expiration caused this notification
-     *
-     * @return void
-     **/
-    public function timeout(TimerInterface $timer);
+     * @return string
+     */
+    public function getPrimaryKey();
 }

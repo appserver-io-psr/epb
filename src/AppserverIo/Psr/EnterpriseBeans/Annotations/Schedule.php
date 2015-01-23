@@ -83,7 +83,6 @@ class Schedule extends ReflectionAnnotation
 
         // set the values found in the annotation
         foreach ($values as $member => $value) {
-
             // check if we've to replace the value
             if (array_key_exists($value, $this->aliases)) {
                 $value = $this->aliases[$value];

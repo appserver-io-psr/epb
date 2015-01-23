@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AppserverIo\Psr\EnterpriseBeans\TimerConfig
  *
