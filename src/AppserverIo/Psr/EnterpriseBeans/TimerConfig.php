@@ -11,15 +11,12 @@
  *
  * PHP version 5
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Johann Zelger <jz@appserver.io>
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
 
 namespace AppserverIo\Psr\EnterpriseBeans;
@@ -33,18 +30,16 @@ namespace AppserverIo\Psr\EnterpriseBeans;
  * The persistent property determines whether the corresponding timer has a lifetime.
  * It is optional and defaults to true.
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Johann Zelger <jz@appserver.io>
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
 class TimerConfig
 {
+
     /**
      * @var \Serializable
      */
@@ -53,7 +48,7 @@ class TimerConfig
     /**
      * Persistent by default
      *
-     * @var bool
+     * @var boolean
      */
     private $persistent = true;
 
@@ -61,7 +56,7 @@ class TimerConfig
      * TimerConfig constructor
      *
      * @param \Serializable $info       The info object
-     * @param bool          $persistent The persistence flag
+     * @param boolean       $persistent The persistence flag
      */
     public function __construct(\Serializable $info = null, $persistent = true)
     {
@@ -70,7 +65,7 @@ class TimerConfig
     }
 
     /**
-     * Return's the serializable info object
+     * Returns the serializable info object
      *
      * @return \Serializable
      */
@@ -80,9 +75,9 @@ class TimerConfig
     }
 
     /**
-     * Return's if should be persistent
+     * Returns if should be persistent
      *
-     * @return bool
+     * @return boolean
      */
     public function isPersistent()
     {
@@ -90,7 +85,7 @@ class TimerConfig
     }
 
     /**
-     * Set's the info object
+     * Sets the info object
      *
      * @param \Serializable $i The info object
      *
@@ -102,9 +97,9 @@ class TimerConfig
     }
 
     /**
-     * Set's the persistence flag
+     * Sets the persistence flag
      *
-     * @param bool $p The persistence flag
+     * @param boolean $p The persistence flag
      *
      * @return void
      */

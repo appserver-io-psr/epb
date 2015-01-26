@@ -11,15 +11,12 @@
  *
  * PHP version 5
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Johann Zelger <jz@appserver.io>
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
 
 namespace AppserverIo\Psr\EnterpriseBeans;
@@ -33,15 +30,12 @@ use AppserverIo\Lang\Reflection\MethodInterface;
  * for timer callback events at a specified time, after a specified elapsed time,
  * after a specified interval, or according to a calendar-based schedule.
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Johann Zelger <jz@appserver.io>
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Johann Zelger <jz@appserver.io>
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
 interface TimerServiceInterface
 {
@@ -109,7 +103,7 @@ interface TimerServiceInterface
     public function getAllTimers();
 
     /**
-     * Creates and schedules a timer taks for the next timeout of the passed timer.
+     * Creates and schedules a timer takes for the next timeout of the passed timer.
      *
      * @param \AppserverIo\Psr\EnterpriseBeans\TimerInterface $timer    The timer we want to schedule a task for
      * @param boolean                                         $newTimer TRUE if this is a new timer being scheduled, and not a re-schedule due to a timeout
