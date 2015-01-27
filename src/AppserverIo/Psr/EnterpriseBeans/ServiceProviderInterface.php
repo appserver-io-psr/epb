@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\ScheduleExpressionTest
+ * AppserverIo\Psr\EnterpriseBeans\ServiceProviderInterface
  *
  * NOTICE OF LICENSE
  *
@@ -21,7 +21,7 @@
 namespace AppserverIo\Psr\EnterpriseBeans;
 
 /**
- * The test implementation for the schedule expression implementation.
+ * The interface for all service providers of the persistence container.
  *
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
@@ -29,35 +29,20 @@ namespace AppserverIo\Psr\EnterpriseBeans;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-class ScheduleExpressionTest extends \PHPUnit_Framework_TestCase
+interface ServiceProviderInterface
 {
 
     /**
-     * The schedule expression instance we want to test.
+     * Returns the service name.
      *
-     * @var \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
+     * @return string
      */
-    protected $scheduleExpression;
+    public function getServiceName();
 
     /**
-     * Initializes the schedule expression instance we want to test.
+     * Returns the unique service identifier.
      *
-     * @return void
-     * @see PHPUnit_Framework_TestCase::setUp()
+     * @return string
      */
-    protected function setUp()
-    {
-        $this->scheduleExpression = new ScheduleExpression();
-    }
-
-    /**
-     * Test the getMonth() method.
-     *
-     * @return void
-     */
-    public function testGetMonth()
-    {
-        $this->scheduleExpression->month($month = 10);
-        $this->assertEquals($month, $this->scheduleExpression->getMonth());
-    }
+    public function getPrimaryKey();
 }

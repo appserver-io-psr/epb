@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\BeanContext
+ * AppserverIo\Psr\EnterpriseBeans\BeanContextInterface
  *
  * NOTICE OF LICENSE
  *
@@ -11,14 +11,11 @@
  *
  * PHP version 5
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
 
 namespace AppserverIo\Psr\EnterpriseBeans;
@@ -26,16 +23,13 @@ namespace AppserverIo\Psr\EnterpriseBeans;
 /**
  * The interface for the bean manager registered for the application.
  *
- * @category   Appserver
- * @package    Psr
- * @subpackage EnterpriseBeans
- * @author     Tim Wagner <tw@appserver.io>
- * @copyright  2014 TechDivision GmbH <info@appserver.io>
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link       https://github.com/appserver-io-psr/epb
- * @link       http://www.appserver.io
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-psr/epb
+ * @link      http://www.appserver.io
  */
-interface BeanContext
+interface BeanContextInterface
 {
 
     /**
@@ -43,7 +37,7 @@ interface BeanContext
      *
      * @var string
      */
-    const IDENTIFIER = 'BeanContext';
+    const IDENTIFIER = 'BeanContextInterface';
 
     /**
      * Returns the absolute path to the web application.
@@ -64,7 +58,7 @@ interface BeanContext
      * @param array  $args      The arguments passed to the session beans constructor
      *
      * @return object The requested bean instance
-     * @throws \AppserverIo\Psr\EnterpriseBeans\InvalidBeanTypeException Is thrown if passed class name is no session bean or is a entity bean (not implmented yet)
+     * @throws \AppserverIo\Psr\EnterpriseBeans\InvalidBeanTypeException Is thrown if passed class name is no session bean or is a entity bean (not implemented yet)
      */
     public function lookup($className, $sessionId = null, array $args = array());
 
@@ -80,7 +74,7 @@ interface BeanContext
     public function attach($instance, $sessionId = null);
 
     /**
-     * Returns a new reflection class intance for the passed class name.
+     * Returns a new reflection class instance for the passed class name.
      *
      * @param string $className The class name to return the reflection class instance for
      *
@@ -89,7 +83,7 @@ interface BeanContext
     public function newReflectionClass($className);
 
     /**
-     * Returns a reflection class intance for the passed class name.
+     * Returns a reflection class instance for the passed class name.
      *
      * @param string $className The class name to return the reflection class instance for
      *
@@ -98,7 +92,7 @@ interface BeanContext
     public function getReflectionClass($className);
 
     /**
-     * Returns a reflection class intance for the passed class name.
+     * Returns a reflection class instance for the passed class name.
      *
      * @param object $instance The instance to return the reflection class instance for
      *

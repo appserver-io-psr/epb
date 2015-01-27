@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\ScheduleExpressionTest
+ * AppserverIo\Psr\EnterpriseBeans\ServiceExecutorInterface
  *
  * NOTICE OF LICENSE
  *
@@ -21,7 +21,7 @@
 namespace AppserverIo\Psr\EnterpriseBeans;
 
 /**
- * The test implementation for the schedule expression implementation.
+ * Interface for executor threads.
  *
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
@@ -29,35 +29,13 @@ namespace AppserverIo\Psr\EnterpriseBeans;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-class ScheduleExpressionTest extends \PHPUnit_Framework_TestCase
+interface ServiceExecutorInterface
 {
 
     /**
-     * The schedule expression instance we want to test.
+     * Returns the application instance.
      *
-     * @var \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
+     * @return \AppserverIo\Psr\Application\ApplicationInterface The application instance
      */
-    protected $scheduleExpression;
-
-    /**
-     * Initializes the schedule expression instance we want to test.
-     *
-     * @return void
-     * @see PHPUnit_Framework_TestCase::setUp()
-     */
-    protected function setUp()
-    {
-        $this->scheduleExpression = new ScheduleExpression();
-    }
-
-    /**
-     * Test the getMonth() method.
-     *
-     * @return void
-     */
-    public function testGetMonth()
-    {
-        $this->scheduleExpression->month($month = 10);
-        $this->assertEquals($month, $this->scheduleExpression->getMonth());
-    }
+    public function getApplication();
 }
