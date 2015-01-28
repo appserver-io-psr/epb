@@ -37,5 +37,5 @@ interface TimerServiceContextInterface extends ServiceContextInterface
      *
      * @var string
      */
-    const IDENTIFIER = 'TimerServiceContext';
+    const IDENTIFIER = 'TimerServiceContextInterface';
 }

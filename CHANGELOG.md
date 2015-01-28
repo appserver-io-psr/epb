@@ -1,3 +1,13 @@
+# Version 0.4.2
+
+## Bugfixes
+
+* Wrong usage of TimerServiceContext interface
+
+## Features
+
+* None
+
 # Version 0.4.1
 
 ## Bugfixes
