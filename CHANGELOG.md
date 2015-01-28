@@ -1,3 +1,13 @@
+# Version 0.4.1
+
+## Bugfixes
+
+* Wrong name of ServiceResourceLocatorInterface interface file 
+
+## Features
+
+* None
+
 # Version 0.4.0
 
 ## Bugfixes
