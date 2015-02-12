@@ -135,7 +135,7 @@ class ScheduleExpression implements \Serializable
     /**
      * Sets the day of week
      *
-     * @param int|string $d The day of week
+     * @param int|string $dayOfWeek The day of week
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
@@ -306,7 +306,7 @@ class ScheduleExpression implements \Serializable
     /**
      * Sets the second.
      *
-     * @param int|string $s The second to set
+     * @param int|string $second The second to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
@@ -319,7 +319,7 @@ class ScheduleExpression implements \Serializable
     /**
      * Sets the start date time.
      *
-     * @param string $starts The start date time to set
+     * @param string $start The start date time to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
