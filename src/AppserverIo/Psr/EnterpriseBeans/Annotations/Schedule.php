@@ -171,7 +171,7 @@ class Schedule extends ReflectionAnnotation
     /**
      * Returns start date time.
      *
-     * @return \DateTime The initial expiration date
+     * @return string The initial expiration date
      */
     public function getStart()
     {
@@ -214,8 +214,8 @@ class Schedule extends ReflectionAnnotation
         $expression->minute($this->getMinute());
         $expression->month($this->getMonth());
         $expression->second($this->getSecond());
-        $expression->start(new \DateTime($this->getStart()));
-        $expression->end(new \DateTime($this->getEnd()));
+        $expression->start($this->getStart());
+        $expression->end($this->getEnd());
         $expression->timezone($this->getTimezone());
         $expression->year($this->getYear());
         $expression->dayOfMonth($this->getDayOfMonth());

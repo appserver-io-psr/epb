@@ -122,13 +122,13 @@ class ScheduleExpression implements \Serializable
     /**
      * Sets the day of month
      *
-     * @param String $d The string
+     * @param String $dayOfMonth The string
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function dayOfMonth($d)
+    public function dayOfMonth($dayOfMonth)
     {
-        $this->dayOfMonth = (string)$d;
+        $this->dayOfMonth = (string) $dayOfMonth;
         return $this;
     }
 
@@ -139,27 +139,27 @@ class ScheduleExpression implements \Serializable
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function dayOfWeek($d)
+    public function dayOfWeek($dayOfWeek)
     {
-        $this->dayOfWeek = (string)$d;
+        $this->dayOfWeek = (string) $dayOfWeek;
         return $this;
     }
 
     /**
-     * Sets the day of week
+     * Sets the day of week.
      *
-     * @param \DateTime $e The end date time
+     * @param string $end The end date time
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function end(\DateTime $e)
+    public function end($end)
     {
-        $this->end = $e->format(ScheduleExpression::DATE_FORMAT);
+        $this->end = (string) $end;
         return $this;
     }
 
     /**
-     * Return's day of month
+     * Returns day of month.
      *
      * @return string
      */
@@ -169,7 +169,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's day of week
+     * Returns day of week.
      *
      * @return string
      */
@@ -179,7 +179,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's end datetime
+     * Returns end datetime.
      *
      * @return string
      */
@@ -189,7 +189,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's hour
+     * Returns hour.
      *
      * @return string
      */
@@ -199,7 +199,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's minute
+     * Returns minute.
      *
      * @return string
      */
@@ -209,7 +209,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's month
+     * Returns month.
      *
      * @return string
      */
@@ -219,7 +219,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's second
+     * Returns second.
      *
      * @return string
      */
@@ -229,7 +229,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's start date time
+     * Returns start date time.
      *
      * @return string
      */
@@ -239,7 +239,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's the timezone
+     * Returns the timezone.
      *
      * @return null|string
      */
@@ -255,7 +255,7 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Return's the year
+     * Returns the year.
      *
      * @return string
      */
@@ -265,98 +265,98 @@ class ScheduleExpression implements \Serializable
     }
 
     /**
-     * Set's the hour
+     * Sets the hour.
      *
-     * @param int|string $h the hour to set
+     * @param int|string $hour the hour to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function hour($h)
+    public function hour($hour)
     {
-        $this->hour = (string)$h;
+        $this->hour = (string) $hour;
         return $this;
     }
 
     /**
-     * Set's the minute
+     * Sets the minute.
      *
-     * @param int|string $m The minute to set
+     * @param int|string $minute The minute to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function minute($m)
+    public function minute($minute)
     {
-        $this->minute = (string)$m;
+        $this->minute = (string) $minute;
         return $this;
     }
 
     /**
-     * Set's the month
+     * Sets the month.
      *
-     * @param int|string $m The month to set
+     * @param int|string $month The month to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function month($m)
+    public function month($month)
     {
-        $this->month = (string)$m;
+        $this->month = (string) $month;
         return $this;
     }
 
     /**
-     * Set's the second
+     * Sets the second.
      *
      * @param int|string $s The second to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function second($s)
+    public function second($second)
     {
-        $this->second = (string)$s;
+        $this->second = (string) $second;
         return $this;
     }
 
     /**
-     * Set's the start date time
+     * Sets the start date time.
      *
-     * @param \DateTime $s The start date time to set
+     * @param string $starts The start date time to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function start(\DateTime $s)
+    public function start($start)
     {
-        $this->start = $s->format(ScheduleExpression::DATE_FORMAT);
+        $this->start = (string) $start;
         return $this;
     }
 
     /**
-     * Set's the timezone
+     * Sets the timezone.
      *
-     * @param int|string $s The timezone to set
+     * @param int|string $timezone The timezone to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function timezone($s)
+    public function timezone($timezone)
     {
-        $this->timezone = (string)$s;
+        $this->timezone = (string) $timezone;
         return $this;
     }
 
     /**
-     * Set's the year
+     * Sets the year.
      *
-     * @param int|string $y The year to set
+     * @param int|string $year The year to set
      *
      * @return \AppserverIo\Psr\EnterpriseBeans\ScheduleExpression
      */
-    public function year($y)
+    public function year($year)
     {
-        $this->year = (string)$y;
+        $this->year = (string) $year;
         return $this;
     }
 
     /**
-     * Render's the object to string
+     * Renders the object to string.
      *
      * @return string
      */
