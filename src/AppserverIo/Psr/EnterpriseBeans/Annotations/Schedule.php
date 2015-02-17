@@ -101,47 +101,55 @@ class Schedule extends ReflectionAnnotation
     /**
      * Returns day of month.
      *
-     * @return string The day of month
+     * @return string|null The day of month
      */
     public function getDayOfMonth()
     {
-        return $this->values[AnnotationKeys::DAY_OF_MONTH];
+        if (isset($this->values[AnnotationKeys::DAY_OF_MONTH])) {
+            return $this->values[AnnotationKeys::DAY_OF_MONTH];
+        }
     }
 
     /**
      * Returns day of week.
      *
-     * @return string The day of week
+     * @return string|null The day of week
      */
     public function getDayOfWeek()
     {
-        return $this->values[AnnotationKeys::DAY_OF_WEEK];
+        if (isset($this->values[AnnotationKeys::DAY_OF_WEEK])) {
+            return $this->values[AnnotationKeys::DAY_OF_WEEK];
+        }
     }
 
     /**
      * Returns end date time.
      *
-     * @return string The last expiration date
+     * @return string|null The last expiration date
      */
     public function getEnd()
     {
-        return $this->values[AnnotationKeys::END];
+        if (isset($this->values[AnnotationKeys::END])) {
+            return $this->values[AnnotationKeys::END];
+        }
     }
 
     /**
      * Returns the hour.
      *
-     * @return string The hour
+     * @return string|null The hour
      */
     public function getHour()
     {
-        return $this->values[AnnotationKeys::HOUR];
+        if (isset($this->values[AnnotationKeys::HOUR])) {
+            return $this->values[AnnotationKeys::HOUR];
+        }
     }
 
     /**
      * Returns the minute.
      *
-     * @return string The minute
+     * @return string|null The minute
      */
     public function getMinute()
     {
@@ -151,31 +159,37 @@ class Schedule extends ReflectionAnnotation
     /**
      * Returns the month.
      *
-     * @return string The month
+     * @return string|null The month
      */
     public function getMonth()
     {
-        return $this->values[AnnotationKeys::MONTH];
+        if (isset($this->values[AnnotationKeys::MONTH])) {
+            return $this->values[AnnotationKeys::MONTH];
+        }
     }
 
     /**
      * Returns the second.
      *
-     * @return string The second
+     * @return string|null The second
      */
     public function getSecond()
     {
-        return $this->values[AnnotationKeys::SECOND];
+        if (isset($this->values[AnnotationKeys::SECOND])) {
+            return $this->values[AnnotationKeys::SECOND];
+        }
     }
 
     /**
      * Returns start date time.
      *
-     * @return string The initial expiration date
+     * @return string|null The initial expiration date
      */
     public function getStart()
     {
-        return $this->values[AnnotationKeys::START];
+        if (isset($this->values[AnnotationKeys::START])) {
+            return $this->values[AnnotationKeys::START];
+        }
     }
 
     /**
@@ -185,17 +199,21 @@ class Schedule extends ReflectionAnnotation
      */
     public function getTimezone()
     {
-        return $this->values[AnnotationKeys::TIMEZONE];
+        if (isset($this->values[AnnotationKeys::TIMEZONE])) {
+            return $this->values[AnnotationKeys::TIMEZONE];
+        }
     }
 
     /**
      * Returns the year.
      *
-     * @return string The year
+     * @return string|null The year
      */
     public function getYear()
     {
-        return $this->values[AnnotationKeys::YEAR];
+        if (isset($this->values[AnnotationKeys::YEAR])) {
+            return $this->values[AnnotationKeys::YEAR];
+        }
     }
 
     /**

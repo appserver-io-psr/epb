@@ -37,30 +37,36 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
     /**
      * Returns the value of the name attribute.
      *
-     * @return string The annotations name attribute
+     * @return string|null The annotations name attribute
      */
     public function getName()
     {
-        return $this->values[AnnotationKeys::NAME];
+        if (isset($this->values[AnnotationKeys::NAME])) {
+            return $this->values[AnnotationKeys::NAME];
+        }
     }
 
     /**
      * Returns the value of the description attribute.
      *
-     * @return string The annotations description attribute
+     * @return string|null The annotations description attribute
      */
     public function getDescription()
     {
-        return $this->values[AnnotationKeys::DESCRIPTION];
+        if (isset($this->values[AnnotationKeys::DESCRIPTION])) {
+            return $this->values[AnnotationKeys::DESCRIPTION];
+        }
     }
 
     /**
      * Returns the value of the lookup attribute.
      *
-     * @return string The annotations lookup attribute
+     * @return string|null The annotations lookup attribute
      */
     public function getLookup()
     {
-        return $this->values[AnnotationKeys::LOOKUP];
+        if (isset($this->values[AnnotationKeys::LOOKUP])) {
+            return $this->values[AnnotationKeys::LOOKUP];
+        }
     }
 }
