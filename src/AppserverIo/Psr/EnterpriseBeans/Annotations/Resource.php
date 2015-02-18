@@ -57,36 +57,44 @@ class Resource extends AbstractBeanAnnotation
      */
     public function getType()
     {
-        return $this->values[AnnotationKeys::TYPE];
+        if (isset($this->values[AnnotationKeys::TYPE])) {
+            return $this->values[AnnotationKeys::TYPE];
+        }
     }
 
     /**
      * Returns the value of the bean interface attribute.
      *
-     * @return string The annotations bean interface attribute
+     * @return string|null The annotations bean interface attribute
      */
     public function getBeanInterface()
     {
-        return $this->values[AnnotationKeys::BEAN_INTERFACE];
+        if (isset($this->values[AnnotationKeys::BEAN_INTERFACE])) {
+            return $this->values[AnnotationKeys::BEAN_INTERFACE];
+        }
     }
 
     /**
      * Returns the value of the bean name attribute.
      *
-     * @return string The annotations bean name attribute
+     * @return string|null The annotations bean name attribute
      */
     public function getBeanName()
     {
-        return $this->values[AnnotationKeys::BEAN_NAME];
+        if (isset($this->values[AnnotationKeys::BEAN_NAME])) {
+            return $this->values[AnnotationKeys::BEAN_NAME];
+        }
     }
 
     /**
      * Returns the value of the lookup name attribute.
      *
-     * @return string The annotations lookup name attribute
+     * @return string|null The annotations lookup name attribute
      */
     public function getLookup()
     {
-        return $this->values[AnnotationKeys::LOOKUP];
+        if (isset($this->values[AnnotationKeys::LOOKUP])) {
+            return $this->values[AnnotationKeys::LOOKUP];
+        }
     }
 }
