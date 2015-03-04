@@ -13,6 +13,7 @@
  *
  * @author    Johann Zelger <jz@appserver.io>
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
@@ -26,10 +27,27 @@ namespace AppserverIo\Psr\EnterpriseBeans;
  *
  * @author    Johann Zelger <jz@appserver.io>
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * The comments below hint at methods present in widely used explicit implementations of this interface and MAY
+ * be introduced in the next MAJOR release of this PSR
+ *
+ * @method \DateTime|null getPreviousRun()    getPreviousRun() Returns the previous run date
+ * @method \DateTime      getNextExpiration() getNextExpiration() This method is similar to Timer::getNextTimeout(), except that this method does not check the timer state
+ * @method \AppserverIo\Psr\EnterpriseBeans\TimerServiceInterface getTimerService() getTimerService() Returns the instance that'll be invoked when the timeout expires
+ * @method \AppserverIo\Appserver\PersistenceContainer\Tasks\TimerTask getTimerTask() getTimerTask(\AppserverIo\Psr\Application\ApplicationInterface $application) Returns the task which handles the timeouts of this timer
+ * @method boolean        isActive()          isActive() Returns TRUE if this timer is active, else FALSE
+ * @method boolean        isAutoTimer()       isAutoTimer() Query whether this is an auto-timer or a normal programmatically created timer
+ * @method boolean        isCanceled()        isCanceled() Returns TRUE if this timer is in TimerState::CANCELED state, else FALSE
+ * @method boolean        isExpired()         isExpired() Returns TRUE if this timer is in TimerState::EXPIRED state, else FALSE
+ * @method boolean        isInRetry()         isInRetry() Returns TRUE if this timer is in TimerState::RETRY_TIMEOUT, else returns FALSE
+ * @method null           setNextTimeout()    setNextTimeout(string $next = null) Sets the next timeout of this timer
+ * @method null           setPreviousRun()    setPreviousRun(\DateTime $previousRun) Sets the previous run date
+ * @method null           setTimerState()     setTimerState(integer $timerState) Sets the (new) timer state
  */
 interface TimerInterface
 {

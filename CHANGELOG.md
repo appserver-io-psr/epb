@@ -1,3 +1,13 @@
+# Version 1.2.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Added method hinting for several interface's common implementations
+
 # Version 1.1.0
 
 ## Bugfixes
