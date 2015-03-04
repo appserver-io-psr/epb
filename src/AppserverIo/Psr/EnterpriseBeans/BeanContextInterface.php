@@ -12,6 +12,7 @@
  * PHP version 5
  *
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
@@ -24,10 +25,22 @@ namespace AppserverIo\Psr\EnterpriseBeans;
  * The interface for the bean manager registered for the application.
  *
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * The comments below hint at methods present in widely used explicit implementations of this interface and MAY
+ * be introduced in the next MAJOR release of this PSR
+ *
+ * @method null        destroyBeanInstance()              destroyBeanInstance(object $instance) Invokes the bean method with a pre-destroy callback
+ * @method null        removeStatefulSessionBean()        removeStatefulSessionBean(string $sessionId, string $className) Removes the stateful session bean with the passed session-ID and class name from the bean manager
+ * @method object      newSingletonSessionBeanInstance()  newSingletonSessionBeanInstance(string $className, string $sessionId = null, array $args = array()) Returns a new instance of the SSB with the passed class name
+ * @method object|null lookupStatefulSessionBean()        lookupStatefulSessionBean(string $sessionId, string $className) Retrieves the requested stateful session bean
+ * @method object|null lookupSingletonSessionBean()       lookupSingletonSessionBean(string $className) Retrieves the requested singleton session bean
+ * @method \AppserverIo\Storage\StorageInterface getSingletonSessionBeans() getSingletonSessionBeans() Return the storage with the singleton session beans
+ * @method \AppserverIo\Storage\StorageInterface getStatefulSessionBeans() getStatefulSessionBeans() Return the storage with the stateful session beans
  */
 interface BeanContextInterface
 {

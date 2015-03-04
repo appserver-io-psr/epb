@@ -13,6 +13,7 @@
  *
  * @author    Johann Zelger <jz@appserver.io>
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
@@ -32,10 +33,20 @@ use AppserverIo\Lang\Reflection\MethodInterface;
  *
  * @author    Johann Zelger <jz@appserver.io>
  * @author    Tim Wagner <tw@appserver.io>
+ * @author    Bernhard Wick <bw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * The comments below hint at methods present in widely used explicit implementations of this interface and MAY
+ * be introduced in the next MAJOR release of this PSR
+ *
+ * @method \AppserverIo\Storage\StorageInterface                        getScheduledTimerTasks()  getScheduledTimerTasks() Returns the scheduled timer tasks
+ * @method \AppserverIo\Psr\EnterpriseBeans\TimedObjectInvokerInterface getTimedObjectInvoker()   getTimedObjectInvoker() Returns the timed object invoker handling timer invocation on timed object instances
+ * @method \AppserverIo\Psr\EnterpriseBeans\ServiceExecutorInterface    getTimerServiceExecutor() getTimerServiceExecutor() Returns the timer object executor instances
+ * @method boolean                                                      isScheduled()             isScheduled(string $id) Queries if the timer with the passed ID has already been scheduled
+ * @method boolean                                                      isStarted()               isStarted() Queries if the timer with the passed ID has already been scheduled
  */
 interface TimerServiceInterface
 {

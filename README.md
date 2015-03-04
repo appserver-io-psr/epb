@@ -1,6 +1,11 @@
 # PHP Enterprise Beans
 
-[![Latest Stable Version](https://poser.pugx.org/appserver-io-psr/epb/v/stable.png)](https://packagist.org/packages/appserver-io-psr/epb) [![Total Downloads](https://poser.pugx.org/appserver-io-psr/epb/downloads.png)](https://packagist.org/packages/appserver-io-psr/epb) [![License](https://poser.pugx.org/appserver-io-psr/epb/license.png)](https://packagist.org/packages/appserver-io-psr/epb) [![Build Status](https://travis-ci.org/appserver-io-psr/epb.png)](https://travis-ci.org/appserver-io-psr/epb) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/appserver-io-psr/epb/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/appserver-io-psr/epb/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/appserver-io-psr/epb/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/appserver-io-psr/epb/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/appserver-io-psr/epb.svg?style=flat-square)](https://packagist.org/packages/appserver-io-psr/epb) 
+ [![Total Downloads](https://img.shields.io/packagist/dt/appserver-io-psr/epb.svg?style=flat-square)](https://packagist.org/packages/appserver-io-psr/epb)
+ [![License](https://img.shields.io/packagist/l/appserver-io-psr/epb.svg?style=flat-square)](https://packagist.org/packages/appserver-io-psr/epb)
+ [![Build Status](https://img.shields.io/travis/appserver-io-psr/epb/master.svg?style=flat-square)](http://travis-ci.org/appserver-io-psr/epb)
+ [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/appserver-io-psr/epb/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/appserver-io-psr/epb/?branch=master)
+ [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/appserver-io-psr/epb/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/appserver-io-psr/epb/?branch=master)
 
 ## Introduction
 
