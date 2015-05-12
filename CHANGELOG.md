@@ -1,3 +1,13 @@
+# Version 1.3.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add PostActivate, PrePassivate, PostDetach and PreAttach annotation implementations
+
 # Version 1.2.0
 
 ## Bugfixes
