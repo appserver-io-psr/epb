@@ -143,4 +143,11 @@ class AnnotationKeys
      * @var string
      */
     const TYPE = 'type';
+
+    /**
+     * Key for the annotation property 'unitName'.
+     *
+     * @var string
+     */
+    const UNIT_NAME = 'unitName';
 }

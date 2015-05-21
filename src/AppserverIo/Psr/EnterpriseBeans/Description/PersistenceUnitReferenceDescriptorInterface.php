@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\Description\BeanDescriptorInterface
+ * AppserverIo\Psr\EnterpriseBeans\Description\PersistenceUnitReferenceDescriptorInterface
  *
  * NOTICE OF LICENSE
  *
@@ -21,61 +21,45 @@
 namespace AppserverIo\Psr\EnterpriseBeans\Description;
 
 /**
- * Interface for a bean descriptor.
+ * Interface for utility classes that stores a persistence unit reference configuration.
  *
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
- *
- * @method array getPersistenceUnitReferences() getPersistenceUnitReferences() The array with the persistence unit references.
  */
-interface BeanDescriptorInterface
+interface PersistenceUnitReferenceDescriptorInterface
 {
 
     /**
-     * Returns the bean name.
+     * Returns the reference name.
      *
-     * @return string The bean name
+     * @return string The reference name
      */
     public function getName();
 
     /**
-     * Returns the beans class name.
+     * Returns the persistence unit name.
      *
-     * @return string The beans class name
+     * @return string The persistence unit name
      */
-    public function getClassName();
+    public function getUnitName();
 
     /**
-     * The array with the EPB references.
+     * Returns the injection target specification.
      *
-     * @return array The EPB references
+     * @return \AppserverIo\Psr\EnterpriseBeans\Description\InjectionTargetDescriptorInterface The injection target specification
      */
-    public function getEpbReferences();
-
-    /**
-     * The array with the resource references.
-     *
-     * @return array The resource references
-     */
-    public function getResReferences();
-
-    /**
-     * Returns an array with the merge EBP, resource and persistence unit references.
-     *
-     * @return array The array with the merge all bean references
-     */
-    public function getReferences();
+    public function getInjectionTarget();
 
     /**
      * Merges the passed configuration into this one. Configuration values
      * of the passed configuration will overwrite the this one.
      *
-     * @param \AppserverIo\Psr\EnterpriseBeans\Description\BeanDescriptorInterface $beanDescriptor The configuration to merge
+     * @param \AppserverIo\Psr\EnterpriseBeans\Description\PersistenceUnitReferenceDescriptorInterface $persistenceUnitReferenceDescriptor The configuration to merge
      *
      * @return void
      */
-    public function merge(BeanDescriptorInterface $beanDescriptor);
+    public function merge(PersistenceUnitReferenceDescriptorInterface $persistenceUnitReferenceDescriptor);
 }

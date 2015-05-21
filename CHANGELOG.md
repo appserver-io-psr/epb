@@ -1,3 +1,13 @@
+# Version 1.4.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add persistence unit functionality necessary for Doctrine integration
+
 # Version 1.3.0
 
 ## Bugfixes
