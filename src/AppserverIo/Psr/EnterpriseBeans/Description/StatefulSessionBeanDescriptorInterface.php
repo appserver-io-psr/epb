@@ -31,4 +31,20 @@ namespace AppserverIo\Psr\EnterpriseBeans\Description;
  */
 interface StatefulSessionBeanDescriptorInterface extends SessionBeanDescriptorInterface
 {
+
+    /**
+     * Returns the array with the remove method names.
+     *
+     * @return array The array with the remove method names
+     */
+    public function getRemoveMethods();
+
+    /**
+     * Queries whether the passed method name is a remove method or not.
+     *
+     * @param string $methodName The method name to be queried
+     *
+     * @return boolean TRUE if the passed method name is a remove method, else FALSE
+     */
+    public function isRemoveMethod($methodName);
 }
