@@ -6,6 +6,7 @@
 
 ## Features
 
+* Extend session bean descriptor with remove method information
 * Add new @Remote annotation class implementation
 
 # Version 1.4.0
