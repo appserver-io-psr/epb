@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\Description\StatefulSessionBeanDescriptorInterface
+ * AppserverIo\Psr\EnterpriseBeans\Annotations\Remove
  *
  * NOTICE OF LICENSE
  *
@@ -18,10 +18,12 @@
  * @link      http://www.appserver.io
  */
 
-namespace AppserverIo\Psr\EnterpriseBeans\Description;
+namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
+
+use AppserverIo\Lang\Reflection\ReflectionAnnotation;
 
 /**
- * Interface for a stateful session bean descriptor.
+ * Annotation implementation representing a @Remove annotation on a bean method.
  *
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
@@ -29,22 +31,24 @@ namespace AppserverIo\Psr\EnterpriseBeans\Description;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-interface StatefulSessionBeanDescriptorInterface extends SessionBeanDescriptorInterface
+class Remove extends ReflectionAnnotation
 {
 
     /**
-     * Returns the array with the remove method names.
+     * The annotation for a default timeout method.
      *
-     * @return array The array with the remove method names
+     * @var string
      */
-    public function getRemoveMethods();
+    const ANNOTATION = 'Remove';
 
     /**
-     * Queries whether the passed method name is a remove method or not.
+     * This method returns the class name as
+     * a string.
      *
-     * @param string $methodName The method name to be queried
-     *
-     * @return boolean TRUE if the passed method name is a remove method, else FALSE
+     * @return string
      */
-    public function isRemoveMethod($methodName);
+    public static function __getClass()
+    {
+        return __CLASS__;
+    }
 }
