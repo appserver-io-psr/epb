@@ -1,4 +1,15 @@
-# Version 1.5.0
+# Version 3.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Extend SFSB descriptor with @PrePassivate + @PostActivate annotations
+* Extend SSB descriptor with @PreAttach + @PostDetach annotations
+
+# Version 2.0.0
 
 ## Bugfixes
 

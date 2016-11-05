@@ -33,6 +33,34 @@ interface StatefulSessionBeanDescriptorInterface extends SessionBeanDescriptorIn
 {
 
     /**
+     * The array with the post detach callback method names.
+     *
+     * @return array The post detach callback method names
+     */
+    public function getPostDetachCallbacks();
+
+    /**
+     * The array with the pre attach callback method names.
+     *
+     * @return array The pre attach callback method names
+     */
+    public function getPreAttachCallbacks();
+
+    /**
+     * The array with the post activate callback method names.
+     *
+     * @return array The post activate callback method names
+     */
+    public function getPostActivateCallbacks();
+
+    /**
+     * The array with the pre passivate callback method names.
+     *
+     * @return array The pre passivate callback method names
+     */
+    public function getPrePassivateCallbacks();
+
+    /**
      * Returns the array with the remove method names.
      *
      * @return array The array with the remove method names

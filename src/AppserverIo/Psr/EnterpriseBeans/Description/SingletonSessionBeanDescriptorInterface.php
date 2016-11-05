@@ -33,6 +33,20 @@ interface SingletonSessionBeanDescriptorInterface extends SessionBeanDescriptorI
 {
 
     /**
+     * The array with the post detach callback method names.
+     *
+     * @return array The post detach callback method names
+     */
+    public function getPostDetachCallbacks();
+
+    /**
+     * The array with the pre attach callback method names.
+     *
+     * @return array The pre attach callback method names
+     */
+    public function getPreAttachCallbacks();
+
+    /**
      * Queries whether the bean should be initialized on startup or not.
      *
      * @return boolean TRUE if the bean should be initialized on startup, else FALSE
