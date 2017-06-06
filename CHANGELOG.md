@@ -1,3 +1,13 @@
+# Version 4.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Remove parameters session ID and args from BeanContextInterface::newInstance() method
+
 # Version 3.0.0
 
 ## Bugfixes
