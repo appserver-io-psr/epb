@@ -6,6 +6,7 @@
 
 ## Features
 
+* Switch to latest appserver-io/lang branch ~3.0
 * Remove parameters session ID and args from BeanContextInterface::newInstance() method
 
 # Version 3.0.0
