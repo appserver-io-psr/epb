@@ -16,9 +16,12 @@ before_install:
   - phpenv rehash
   - wget https://scrutinizer-ci.com/ocular.phar
 
+before_script:
+  - composer selfupdate
+
 script:
-  - composer install
-  - vendor/bin/robo build
+  - ant composer-init
+  - ant build
   - php ocular.phar code-coverage:upload --format=php-clover $TRAVIS_BUILD_DIR/target/reports/unit/clover.xml
 
 notifications:
