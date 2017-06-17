@@ -28,8 +28,6 @@ namespace AppserverIo\Psr\EnterpriseBeans\Description;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
- *
- * @method array getPersistenceUnitReferences() getPersistenceUnitReferences() The array with the persistence unit references.
  */
 interface BeanDescriptorInterface
 {
@@ -63,9 +61,23 @@ interface BeanDescriptorInterface
     public function getResReferences();
 
     /**
-     * Returns an array with the merge EBP, resource and persistence unit references.
+     * The array with the resource references.
      *
-     * @return array The array with the merge all bean references
+     * @return array The resource references
+     */
+    public function getBeanReferences();
+
+    /**
+     * The array with the persistence unit references.
+     *
+     * @return arra The persistence unit references
+     */
+    public function getPersistenceUnitReferences();
+
+    /**
+     * Returns an array with the all references.
+     *
+     * @return array The array with the merge all references
      */
     public function getReferences();
 
