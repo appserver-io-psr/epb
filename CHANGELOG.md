@@ -1,3 +1,13 @@
+# Version 4.0.1
+
+## Bugfixes
+
+* Fixed #18 schedule annotation alias replacement bug
+
+## Features
+
+* None
+
 # Version 4.0.0
 
 ## Bugfixes
