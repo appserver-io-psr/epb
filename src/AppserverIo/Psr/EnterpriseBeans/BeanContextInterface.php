@@ -116,11 +116,9 @@ interface BeanContextInterface
     /**
      * Returns a new instance of the passed class name.
      *
-     * @param string      $className The fully qualified class name to return the instance for
-     * @param string|null $sessionId The session-ID, necessary to inject stateful session beans (SFBs)
-     * @param array       $args      Arguments to pass to the constructor of the instance
+     * @param string $className The fully qualified class name to return the instance for
      *
      * @return object The instance itself
      */
-    public function newInstance($className, $sessionId = null, array $args = array());
+    public function newInstance($className);
 }
