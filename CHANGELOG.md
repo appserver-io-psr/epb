@@ -2,7 +2,7 @@
 
 ## Bugfixes
 
-* None
+* Fixed #18 schedule annotation alias replacement bug
 
 ## Features
 
