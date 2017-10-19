@@ -59,7 +59,7 @@ class Schedule extends ReflectionAnnotation
      * The default number to append to an alias if a number is missing
      * @var string
      */
-    const DEFAULTNUMBER = '5';
+    const DEFAULT_NUMBER = '1';
 
     /**
      * The aliases to be replaced with valid CRON values.
