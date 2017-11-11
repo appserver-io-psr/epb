@@ -96,7 +96,7 @@ interface TimerServiceInterface
     /**
      * Get all the active timers associated with this bean.
      *
-     * @return \TechDivision\Storage\StorageInterface A collection of Timer objects.
+     * @return \AppserverIo\Storage\StorageInterface A collection of Timer objects.
      *
      * @throws \AppserverIo\Psr\EnterpriseBeans\EnterpriseBeansException If this method could not complete due to a system-level failure.
      **/
@@ -107,7 +107,7 @@ interface TimerServiceInterface
      * bean is packaged. These include both the programmatically-created timers and
      * the automatically-created timers.
      *
-     * @return \TechDivision\Storage\StorageInterface A collection of Timer objects.
+     * @return \AppserverIo\Storage\StorageInterface A collection of Timer objects.
      *
      * @throws \AppserverIo\Psr\EnterpriseBeans\EnterpriseBeansException If this method could not complete due to a system-level failure.
      **/

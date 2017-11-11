@@ -1,3 +1,14 @@
+# Version 5.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add @Factory annotation
+* Refactor descriptors for optimized bean initialization
+
 # Version 4.0.0
 
 ## Bugfixes

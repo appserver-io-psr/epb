@@ -70,7 +70,7 @@ interface BeanDescriptorInterface
     /**
      * The array with the persistence unit references.
      *
-     * @return arra The persistence unit references
+     * @return array The persistence unit references
      */
     public function getPersistenceUnitReferences();
 

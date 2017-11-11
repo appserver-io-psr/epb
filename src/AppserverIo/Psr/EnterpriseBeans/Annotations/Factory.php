@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\Annotations\Inject
+ * AppserverIo\Psr\EnterpriseBeans\Annotations\Factory
  *
  * NOTICE OF LICENSE
  *
@@ -31,7 +31,7 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-class Inject extends ReflectionAnnotation
+class Factory extends ReflectionAnnotation
 {
 
     /**
@@ -39,7 +39,7 @@ class Inject extends ReflectionAnnotation
      *
      * @var string
      */
-    const ANNOTATION = 'Inject';
+    const ANNOTATION = 'Factory';
 
     /**
      * This method returns the class name as
@@ -89,14 +89,14 @@ class Inject extends ReflectionAnnotation
     }
 
     /**
-     * Returns the value of the factory attribute.
+     * Returns the value of the factory method attribute.
      *
-     * @return string The annotations factory attribute
+     * @return string The annotations factory method attribute
      */
-    public function getFactory()
+    public function getMethod()
     {
-        if (isset($this->values[AnnotationKeys::FACTORY])) {
-            return $this->values[AnnotationKeys::FACTORY];
+        if (isset($this->values[AnnotationKeys::METHOD])) {
+            return $this->values[AnnotationKeys::METHOD];
         }
     }
 }

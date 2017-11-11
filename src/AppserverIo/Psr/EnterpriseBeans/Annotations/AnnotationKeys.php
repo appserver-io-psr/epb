@@ -150,4 +150,18 @@ class AnnotationKeys
      * @var string
      */
     const UNIT_NAME = 'unitName';
+
+    /**
+     * Key for the annotation property 'factory'.
+     *
+     * @var string
+     */
+    const FACTORY = 'factory';
+
+    /**
+     * Key for the annotation property 'method'.
+     *
+     * @var string
+     */
+    const METHOD = 'method';
 }
