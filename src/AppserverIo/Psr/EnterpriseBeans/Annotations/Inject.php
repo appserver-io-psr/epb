@@ -65,6 +65,18 @@ class Inject extends ReflectionAnnotation
     }
 
     /**
+     * Returns the value of the bean name attribute.
+     *
+     * @return string|null The annotations bean Name attribute
+     */
+    public function getBeanName()
+    {
+        if (isset($this->values[AnnotationKeys::BEAN_NAME])) {
+            return $this->values[AnnotationKeys::BEAN_NAME];
+        }
+    }
+
+    /**
      * Returns the value of the description attribute.
      *
      * @return string|null The annotations description attribute
