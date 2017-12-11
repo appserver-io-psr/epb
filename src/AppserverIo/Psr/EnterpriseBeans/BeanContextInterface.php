@@ -67,24 +67,12 @@ interface BeanContextInterface
      * will be returned.
      *
      * @param string $className The name of the session bean's class
-     * @param string $sessionId The session ID
      * @param array  $args      The arguments passed to the session beans constructor
      *
      * @return object The requested bean instance
      * @throws \AppserverIo\Psr\EnterpriseBeans\InvalidBeanTypeException Is thrown if passed class name is no session bean or is a entity bean (not implemented yet)
      */
-    public function lookup($className, $sessionId = null, array $args = array());
-
-    /**
-     * Attaches the passed bean, depending on it's type to the container.
-     *
-     * @param object $instance  The bean instance to attach
-     * @param string $sessionId The session-ID when we have stateful session bean
-     *
-     * @return void
-     * @throws \Exception Is thrown if we have a stateful session bean, but no session-ID passed
-     */
-    public function attach($instance, $sessionId = null);
+    public function lookup($className, array $args = array());
 
     /**
      * Returns a new reflection class instance for the passed class name.
@@ -117,10 +105,9 @@ interface BeanContextInterface
      * Returns a new instance of the passed class name.
      *
      * @param string      $className The fully qualified class name to return the instance for
-     * @param string|null $sessionId The session-ID, necessary to inject stateful session beans (SFBs)
      * @param array       $args      Arguments to pass to the constructor of the instance
      *
      * @return object The instance itself
      */
-    public function newInstance($className, $sessionId = null, array $args = array());
+    public function newInstance($className, array $args = array());
 }
