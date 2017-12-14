@@ -20,8 +20,6 @@
 
 namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 
-use AppserverIo\Lang\Reflection\ReflectionAnnotation;
-
 /**
  * Annotation implementation representing a @Inject annotation on a class method/property.
  *
@@ -31,7 +29,7 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-class Inject extends ReflectionAnnotation
+class Inject extends AbstractBeanAnnotation
 {
 
     /**
@@ -53,18 +51,6 @@ class Inject extends ReflectionAnnotation
     }
 
     /**
-     * Returns the value of the name attribute.
-     *
-     * @return string|null The annotations name attribute
-     */
-    public function getName()
-    {
-        if (isset($this->values[AnnotationKeys::NAME])) {
-            return $this->values[AnnotationKeys::NAME];
-        }
-    }
-
-    /**
      * Returns the value of the bean name attribute.
      *
      * @return string|null The annotations bean Name attribute
@@ -73,18 +59,6 @@ class Inject extends ReflectionAnnotation
     {
         if (isset($this->values[AnnotationKeys::BEAN_NAME])) {
             return $this->values[AnnotationKeys::BEAN_NAME];
-        }
-    }
-
-    /**
-     * Returns the value of the description attribute.
-     *
-     * @return string|null The annotations description attribute
-     */
-    public function getDescription()
-    {
-        if (isset($this->values[AnnotationKeys::DESCRIPTION])) {
-            return $this->values[AnnotationKeys::DESCRIPTION];
         }
     }
 

@@ -164,4 +164,11 @@ class AnnotationKeys
      * @var string
      */
     const METHOD = 'method';
+
+    /**
+     * Key for the annotation property 'shared'.
+     *
+     * @var string
+     */
+    const SHARED = 'shared';
 }
