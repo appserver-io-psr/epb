@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Psr\EnterpriseBeans\Annotations\AbstractBeanAnnotation
+ * AppserverIo\Psr\EnterpriseBeans\Annotations\Factory
  *
  * NOTICE OF LICENSE
  *
@@ -14,7 +14,7 @@
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link      https://github.com/appserver-io-psr/epb
+ * @link      https://github.com/appserver-io-psr/apb
  * @link      http://www.appserver.io
  */
 
@@ -23,7 +23,7 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 use AppserverIo\Lang\Reflection\ReflectionAnnotation;
 
 /**
- * Abstract bean annotation implementation.
+ * Annotation implementation representing a @Inject annotation on a class method/property.
  *
  * @author    Tim Wagner <tw@appserver.io>
  * @copyright 2015 TechDivision GmbH <info@appserver.io>
@@ -31,24 +31,25 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-abstract class AbstractBeanAnnotation extends ReflectionAnnotation
+class Factory extends ReflectionAnnotation
 {
 
     /**
-     * The constructor the initializes the instance with the
-     * data passed with the token.
+     * The annotation for a default timeout method.
      *
-     * @param string $annotationName The annotation name
-     * @param array  $values         The annotation values
+     * @var string
      */
-    public function __construct($annotationName, array $values = array())
+    const ANNOTATION = 'Factory';
+
+    /**
+     * This method returns the class name as
+     * a string.
+     *
+     * @return string
+     */
+    public static function __getClass()
     {
-
-        // pre-initialize the shared flag if NOT found in the passed values
-        isset($values[AnnotationKeys::SHARED]) ? null : $values[AnnotationKeys::SHARED] = true;
-
-        // pass the paremeters to the parent instance
-        parent::__construct($annotationName, $values);
+        return __CLASS__;
     }
 
     /**
@@ -76,26 +77,26 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
     }
 
     /**
-     * Returns the value of the lookup attribute.
+     * Returns the value of the type attribute.
      *
-     * @return string|null The annotations lookup attribute
+     * @return string The annotations type attribute
      */
-    public function getLookup()
+    public function getType()
     {
-        if (isset($this->values[AnnotationKeys::LOOKUP])) {
-            return $this->values[AnnotationKeys::LOOKUP];
+        if (isset($this->values[AnnotationKeys::TYPE])) {
+            return $this->values[AnnotationKeys::TYPE];
         }
     }
 
     /**
-     * Returns the value of the shared attribute.
+     * Returns the value of the factory method attribute.
      *
-     * @return boolean The annotations shared attribute
+     * @return string The annotations factory method attribute
      */
-    public function getShared()
+    public function getMethod()
     {
-        if (isset($this->values[AnnotationKeys::SHARED])) {
-            return $this->values[AnnotationKeys::SHARED];
+        if (isset($this->values[AnnotationKeys::METHOD])) {
+            return $this->values[AnnotationKeys::METHOD];
         }
     }
 }

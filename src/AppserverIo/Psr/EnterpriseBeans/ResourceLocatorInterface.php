@@ -41,11 +41,10 @@ interface ResourceLocatorInterface
      *
      * @param \AppserverIo\Psr\EnterpriseBeans\BeanContextInterface $beanManager The bean manager instance
      * @param string                                                $className   The name of the session bean's class
-     * @param string                                                $sessionId   The session ID
      * @param array                                                 $args        The arguments passed to the session beans constructor
      *
      * @return object The requested session bean
      * @throws \AppserverIo\Psr\EnterpriseBeans\InvalidBeanTypeException Is thrown if passed class name is no session bean or is a entity bean (not implmented yet)
      */
-    public function lookup(BeanContextInterface $beanManager, $className, $sessionId = null, array $args = array());
+    public function lookup(BeanContextInterface $beanManager, $className, array $args = array());
 }
