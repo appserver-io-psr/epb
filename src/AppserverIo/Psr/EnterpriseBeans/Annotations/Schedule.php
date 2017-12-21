@@ -56,11 +56,17 @@ class Schedule extends ReflectionAnnotation
     const ANNOTATION = 'Schedule';
 
     /**
+     * The default number to append to an alias if a number is missing
+     * @var string
+     */
+    const DEFAULT_NUMBER = '1';
+
+    /**
      * The aliases to be replaced with valid CRON values.
      *
      * @var array
      */
-    protected $aliases = array('EVERY' => '*', 'ZERO' => '0');
+    protected $aliases = array('EVERY' => '*', 'ZERO' => '0', 'SLASH' => '/');
 
     /**
      * The constructor the initializes the instance with the
@@ -80,6 +86,10 @@ class Schedule extends ReflectionAnnotation
             // check if we've to replace the value
             foreach ($this->aliases as $aliasKey => $aliasValue) {
                 $value = str_replace($aliasKey, $aliasValue, $value);
+                // Append the default number to the SLASH alias value if no number is given
+                if ((preg_match('/\/$/', $value)) === 1) {
+                    $value .= self::DEFAULTNUMBER;
+                }
             }
             // set the value
             $this->values[$member] = $value;
