@@ -85,4 +85,28 @@ class Inject extends AbstractBeanAnnotation
             return $this->values[AnnotationKeys::FACTORY];
         }
     }
+
+    /**
+     * Returns the value of the factory type attribute.
+     *
+     * @return string The annotations factory type attribute
+     */
+    public function getFactoryType()
+    {
+        if (isset($this->values[AnnotationKeys::FACTORY_TYPE])) {
+            return $this->values[AnnotationKeys::FACTORY_TYPE];
+        }
+    }
+
+    /**
+     * Returns the value of the factory method attribute.
+     *
+     * @return string The annotations factory method attribute
+     */
+    public function getFactoryMethod()
+    {
+        if (isset($this->values[AnnotationKeys::FACTORY_METHOD])) {
+            return $this->values[AnnotationKeys::FACTORY_METHOD];
+        }
+    }
 }
