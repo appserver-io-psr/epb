@@ -159,6 +159,20 @@ class AnnotationKeys
     const FACTORY = 'factory';
 
     /**
+     * Key for the annotation property 'factoryType'.
+     *
+     * @var string
+     */
+    const FACTORY_TYPE = 'factoryType';
+
+    /**
+     * Key for the annotation property 'factoryMethod'.
+     *
+     * @var string
+     */
+    const FACTORY_METHOD = 'factoryMethod';
+
+    /**
      * Key for the annotation property 'method'.
      *
      * @var string
