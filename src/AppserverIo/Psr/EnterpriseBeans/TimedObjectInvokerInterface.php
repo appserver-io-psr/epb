@@ -53,7 +53,7 @@ interface TimedObjectInvokerInterface
     /**
      * Returns the timeout methods.
      *
-     * @return \TechDivision\Storage\StorageInterface A collection of timeout methods
+     * @return \AppserverIo\Storage\StorageInterface A collection of timeout methods
      */
     public function getTimeoutMethods();
 

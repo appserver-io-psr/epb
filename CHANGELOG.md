@@ -1,3 +1,16 @@
+# Version 5.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add @Inject annotation
+* Refactor descriptors for optimized bean initialization
+* Remove session ID parameter from BeanContextInterface::lookup() method
+* Remove session ID parameter from ResourceLocatorInterface::lookup() method
+
 # Version 4.0.0
 
 ## Bugfixes
@@ -6,6 +19,7 @@
 
 ## Features
 
+* Switch to latest appserver-io/lang branch ~3.0
 * Remove parameters session ID and args from BeanContextInterface::newInstance() method
 
 # Version 3.0.0

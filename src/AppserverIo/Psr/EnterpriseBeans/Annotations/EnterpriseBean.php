@@ -85,16 +85,4 @@ class EnterpriseBean extends AbstractBeanAnnotation
             return $this->values[AnnotationKeys::BEAN_NAME];
         }
     }
-
-    /**
-     * Returns the value of the lookup name attribute.
-     *
-     * @return string|null The annotations lookup name attribute
-     */
-    public function getLookup()
-    {
-        if (isset($this->values[AnnotationKeys::LOOKUP])) {
-            return $this->values[AnnotationKeys::LOOKUP];
-        }
-    }
 }
