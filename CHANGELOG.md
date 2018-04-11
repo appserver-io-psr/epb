@@ -6,8 +6,10 @@
 
 ## Features
 
-* Add @Factory annotation
+* Add @Inject annotation
 * Refactor descriptors for optimized bean initialization
+* Remove session ID parameter from BeanContextInterface::lookup() method
+* Remove session ID parameter from ResourceLocatorInterface::lookup() method
 
 # Version 4.0.0
 
