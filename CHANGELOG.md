@@ -1,3 +1,14 @@
+# Version 6.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add Fixture and Migration annotations
+* Method descriptor interfaces from appserver-io/description to this repository
+
 # Version 5.0.0
 
 ## Bugfixes
