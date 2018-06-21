@@ -6,8 +6,8 @@
     "require": {
         "php": ">=5.5.0",
         "appserver-io/lang": "~3.0",
-        "appserver-io/storage": "2.0.*",
-        "appserver-io-psr/application": "1.4.*"
+        "appserver-io/storage": "~2.0",
+        "appserver-io-psr/application": "~1.0"
     },
     "require-dev": {
         "appserver-io/build": "~1.0"

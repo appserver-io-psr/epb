@@ -1,3 +1,13 @@
+# Version 6.0.1
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switch to appserver-io-psr/application ~1.0 branch
+
 # Version 6.0.0
 
 ## Bugfixes
