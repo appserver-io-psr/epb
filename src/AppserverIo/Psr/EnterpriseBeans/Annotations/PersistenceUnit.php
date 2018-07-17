@@ -28,38 +28,36 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS", "METHOD","PROPERTY"})
  */
 class PersistenceUnit extends AbstractBeanAnnotation
 {
 
     /**
-     * The annotation for method, a bean has to be injected.
+     * The value of the unitName attribute.
      *
      * @var string
      */
-    const ANNOTATION = 'PersistenceUnit';
+    protected $unitName;
 
     /**
-     * This method returns the class name as
-     * a string.
+     * The constructor the initializes the instance with the
+     * data passed with the token.
      *
-     * @return string
+     * @param array $values The annotation values
      */
-    public static function __getClass()
+    public function __construct(array $values = array())
     {
-        return __CLASS__;
-    }
 
-    /**
-     * Returns the value of the name attribute.
-     *
-     * @return string The annotations name attribute
-     */
-    public function getName()
-    {
-        if (isset($this->values[AnnotationKeys::NAME])) {
-            return $this->values[AnnotationKeys::NAME];
+        // set the unit name attribute, if available
+        if (isset($values[AnnotationKeys::UNIT_NAME])) {
+            $this->unitName = $values[AnnotationKeys::UNIT_NAME];
         }
+
+        // pass the values through to the parent constructor
+        parent::__construct($values);
     }
 
     /**
@@ -69,8 +67,6 @@ class PersistenceUnit extends AbstractBeanAnnotation
      */
     public function getUnitName()
     {
-        if (isset($this->values[AnnotationKeys::UNIT_NAME])) {
-            return $this->values[AnnotationKeys::UNIT_NAME];
-        }
+        return $this->unitName;
     }
 }

@@ -20,8 +20,6 @@
 
 namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 
-use AppserverIo\Lang\Reflection\ReflectionAnnotation;
-
 /**
  * Annotation implementation representing a @Startup annotation on a bean.
  *
@@ -30,25 +28,10 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS"})
  */
-class Startup extends ReflectionAnnotation
+class Startup extends AbstractAnnotation
 {
-
-    /**
-     * The annotation for a bean that has to be loaded with the application server start.
-     *
-     * @var string
-     */
-    const ANNOTATION = 'Startup';
-
-    /**
-     * This method returns the class name as
-     * a string.
-     *
-     * @return string
-     */
-    public static function __getClass()
-    {
-        return __CLASS__;
-    }
 }

@@ -20,8 +20,6 @@
 
 namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 
-use AppserverIo\Lang\Reflection\ReflectionAnnotation;
-
 /**
  * Abstract bean annotation implementation.
  *
@@ -31,24 +29,65 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
  */
-abstract class AbstractBeanAnnotation extends ReflectionAnnotation
+abstract class AbstractBeanAnnotation extends AbstractAnnotation
 {
+
+    /**
+     * The value of the name attribute.
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * The value of the description attribute.
+     *
+     * @var string
+     */
+    protected $description;
+
+    /**
+     * The value of the lookup attribute.
+     *
+     * @var string
+     */
+    protected $lookup;
+
+    /**
+     * The value of the shared attribute.
+     *
+     * @var boolean
+     */
+    protected $shared = true;
 
     /**
      * The constructor the initializes the instance with the
      * data passed with the token.
      *
-     * @param string $annotationName The annotation name
-     * @param array  $values         The annotation values
+     * @param array $values The annotation values
      */
-    public function __construct($annotationName, array $values = array())
+    public function __construct(array $values = array())
     {
 
-        // pre-initialize the shared flag if NOT found in the passed values
-        isset($values[AnnotationKeys::SHARED]) ? null : $values[AnnotationKeys::SHARED] = true;
+        // set the name attribute, if available
+        if (isset($values[AnnotationKeys::NAME])) {
+            $this->name = $values[AnnotationKeys::NAME];
+        }
 
-        // pass the paremeters to the parent instance
-        parent::__construct($annotationName, $values);
+        // set the description attribute, if available
+        if (isset($values[AnnotationKeys::DESCRIPTION])) {
+            $this->description = $values[AnnotationKeys::DESCRIPTION];
+        }
+
+        // set the lookup attribute, if available
+        if (isset($values[AnnotationKeys::LOOKUP])) {
+            $this->lookup = $values[AnnotationKeys::LOOKUP];
+        }
+
+        // set the shared attribute, if available
+        if (isset($values[AnnotationKeys::SHARED])) {
+            $this->shared = $values[AnnotationKeys::SHARED];
+        }
     }
 
     /**
@@ -58,9 +97,7 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
      */
     public function getName()
     {
-        if (isset($this->values[AnnotationKeys::NAME])) {
-            return $this->values[AnnotationKeys::NAME];
-        }
+        return $this->name;
     }
 
     /**
@@ -70,9 +107,7 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
      */
     public function getDescription()
     {
-        if (isset($this->values[AnnotationKeys::DESCRIPTION])) {
-            return $this->values[AnnotationKeys::DESCRIPTION];
-        }
+        return $this->description;
     }
 
     /**
@@ -82,9 +117,7 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
      */
     public function getLookup()
     {
-        if (isset($this->values[AnnotationKeys::LOOKUP])) {
-            return $this->values[AnnotationKeys::LOOKUP];
-        }
+        return $this->lookup;
     }
 
     /**
@@ -94,8 +127,6 @@ abstract class AbstractBeanAnnotation extends ReflectionAnnotation
      */
     public function getShared()
     {
-        if (isset($this->values[AnnotationKeys::SHARED])) {
-            return $this->values[AnnotationKeys::SHARED];
-        }
+        return $this->shared;
     }
 }

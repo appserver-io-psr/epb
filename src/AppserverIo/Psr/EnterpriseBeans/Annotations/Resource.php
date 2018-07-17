@@ -28,38 +28,72 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS", "METHOD","PROPERTY"})
  */
 class Resource extends AbstractBeanAnnotation
 {
 
     /**
-     * The annotation for method, a bean has to be injected.
+     * The value of the bean interface attribute.
      *
      * @var string
      */
-    const ANNOTATION = 'Resource';
+    protected $beanInterface;
 
     /**
-     * This method returns the class name as
-     * a string.
+     *  The value of the bean name attribute.
      *
-     * @return string
+     * @var string
      */
-    public static function __getClass()
-    {
-        return __CLASS__;
-    }
+    protected $beanName;
 
     /**
-     * Returns the value of the type attribute.
+     * The value of the type attribute.
      *
-     * @return string The annotations type attribute
+     * @var string
      */
-    public function getType()
+    protected $type;
+
+    /**
+     * The value of the lookup attribute.
+     *
+     * @var string
+     */
+    protected $lookup;
+
+    /**
+     * The constructor the initializes the instance with the
+     * data passed with the token.
+     *
+     * @param array $values The annotation values
+     */
+    public function __construct(array $values = array())
     {
-        if (isset($this->values[AnnotationKeys::TYPE])) {
-            return $this->values[AnnotationKeys::TYPE];
+
+        // set the bean interface attribute, if available
+        if (isset($values[AnnotationKeys::BEAN_INTERFACE])) {
+            $this->beanInterface = $values[AnnotationKeys::BEAN_INTERFACE];
         }
+
+        // set the bean interface attribute, if available
+        if (isset($values[AnnotationKeys::BEAN_NAME])) {
+            $this->beanName = $values[AnnotationKeys::BEAN_NAME];
+        }
+
+        // set the type attribute, if available
+        if (isset($values[AnnotationKeys::TYPE])) {
+            $this->type = $values[AnnotationKeys::TYPE];
+        }
+
+        // set the lookup attribute, if available
+        if (isset($values[AnnotationKeys::LOOKUP])) {
+            $this->lookup = $values[AnnotationKeys::LOOKUP];
+        }
+
+        // pass the values through to the parent constructor
+        parent::__construct($values);
     }
 
     /**
@@ -69,21 +103,27 @@ class Resource extends AbstractBeanAnnotation
      */
     public function getBeanInterface()
     {
-        if (isset($this->values[AnnotationKeys::BEAN_INTERFACE])) {
-            return $this->values[AnnotationKeys::BEAN_INTERFACE];
-        }
+        return $this->beanInterface;
     }
 
     /**
      * Returns the value of the bean name attribute.
      *
-     * @return string|null The annotations bean name attribute
+     * @return string|null The annotations bean Name attribute
      */
     public function getBeanName()
     {
-        if (isset($this->values[AnnotationKeys::BEAN_NAME])) {
-            return $this->values[AnnotationKeys::BEAN_NAME];
-        }
+        return $this->beanName;
+    }
+
+    /**
+     * Returns the value of the type attribute.
+     *
+     * @return string The annotations type attribute
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
     /**
@@ -93,8 +133,6 @@ class Resource extends AbstractBeanAnnotation
      */
     public function getLookup()
     {
-        if (isset($this->values[AnnotationKeys::LOOKUP])) {
-            return $this->values[AnnotationKeys::LOOKUP];
-        }
+        return $this->lookup;
     }
 }

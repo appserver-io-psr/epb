@@ -20,8 +20,6 @@
 
 namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 
-use AppserverIo\Lang\Reflection\ReflectionAnnotation;
-
 /**
  * Annotation implementation representing a @Timeout annotation on a bean method.
  *
@@ -30,25 +28,10 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"METHOD"})
  */
-class Timeout extends ReflectionAnnotation
+class Timeout extends AbstractAnnotation
 {
-
-    /**
-     * The annotation for a default timeout method.
-     *
-     * @var string
-     */
-    const ANNOTATION = 'Timeout';
-
-    /**
-     * This method returns the class name as
-     * a string.
-     *
-     * @return string
-     */
-    public static function __getClass()
-    {
-        return __CLASS__;
-    }
 }
