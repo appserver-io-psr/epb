@@ -21,7 +21,6 @@
 namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
 
 use AppserverIo\Psr\EnterpriseBeans\ScheduleExpression;
-use AppserverIo\Lang\Reflection\ReflectionAnnotation;
 
 /**
  * Annotation implementation representing a @Schedule annotation on a bean method.
@@ -44,16 +43,12 @@ use AppserverIo\Lang\Reflection\ReflectionAnnotation;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"METHOD"})
  */
-class Schedule extends ReflectionAnnotation
+class Schedule extends AbstractAnnotation
 {
-
-    /**
-     * The annotation for method, a timer has to be registered for.
-     *
-     * @var string
-     */
-    const ANNOTATION = 'Schedule';
 
     /**
      * The default number to append to an alias if a number is missing
@@ -69,17 +64,83 @@ class Schedule extends ReflectionAnnotation
     protected $aliases = array('EVERY' => '*', 'ZERO' => '0', 'SLASH' => '/');
 
     /**
+     * The day of month.
+     *
+     * @var string
+     */
+    protected $dayOfMonth;
+
+    /**
+     * The day of week.
+     *
+     * @var string
+     */
+    protected $dayOfWeek;
+
+    /**
+     * The end date time.
+     *
+     * @var string
+     */
+    protected $end;
+
+    /**
+     * The the hour.
+     *
+     * @var string
+     */
+    protected $hour;
+
+    /**
+     * The the minute.
+     *
+     * @var string
+     */
+    protected $minute;
+
+    /**
+     * The the month.
+     *
+     * @var string
+     */
+    protected $month;
+
+    /**
+     * The the second.
+     *
+     * @var string
+     */
+    protected $second;
+
+    /**
+     * The start date time.
+     *
+     * @var string
+     */
+    protected $start;
+
+    /**
+     * The the timezone.
+     *
+     * @var string
+     */
+    protected $timezone;
+
+    /**
+     * The the year.
+     *
+     * @var string
+     */
+    protected $year;
+
+    /**
      * The constructor the initializes the instance with the
      * data passed with the token.
      *
-     * @param string $annotationName The annotation name
-     * @param array  $values         The annotation values
+     * @param array $values The annotation values
      */
-    public function __construct($annotationName, array $values = array())
+    public function __construct(array $values = array())
     {
-
-        // set the annotation name
-        $this->annotationName = $annotationName;
 
         // set the values found in the annotation
         foreach ($values as $member => $value) {
@@ -92,19 +153,58 @@ class Schedule extends ReflectionAnnotation
                 }
             }
             // set the value
-            $this->values[$member] = $value;
+            $values[$member] = $value;
         }
-    }
 
-    /**
-     * This method returns the class name as
-     * a string.
-     *
-     * @return string
-     */
-    public static function __getClass()
-    {
-        return __CLASS__;
+        // set the day of month attribute, if available
+        if (isset($values[AnnotationKeys::DAY_OF_MONTH])) {
+            $this->dayOfMonth = $values[AnnotationKeys::DAY_OF_MONTH];
+        }
+
+        // set the day of week attribute, if available
+        if (isset($values[AnnotationKeys::DAY_OF_WEEK])) {
+            $this->dayOfWeek = $values[AnnotationKeys::DAY_OF_WEEK];
+        }
+
+        // set the end attribute, if available
+        if (isset($values[AnnotationKeys::END])) {
+            $this->end = $values[AnnotationKeys::END];
+        }
+
+        // set the hour attribute, if available
+        if (isset($values[AnnotationKeys::HOUR])) {
+            $this->hour = $values[AnnotationKeys::HOUR];
+        }
+
+        // set the minute attribute, if available
+        if (isset($values[AnnotationKeys::MINUTE])) {
+            $this->minute = $values[AnnotationKeys::MINUTE];
+        }
+
+        // set the month attribute, if available
+        if (isset($values[AnnotationKeys::MONTH])) {
+            $this->month = $values[AnnotationKeys::MONTH];
+        }
+
+        // set the second attribute, if available
+        if (isset($values[AnnotationKeys::SECOND])) {
+            $this->second = $values[AnnotationKeys::SECOND];
+        }
+
+        // set the start attribute, if available
+        if (isset($values[AnnotationKeys::START])) {
+            $this->start = $values[AnnotationKeys::START];
+        }
+
+        // set the timezone attribute, if available
+        if (isset($values[AnnotationKeys::TIMEZONE])) {
+            $this->timezone = $values[AnnotationKeys::TIMEZONE];
+        }
+
+        // set the year attribute, if available
+        if (isset($values[AnnotationKeys::YEAR])) {
+            $this->year = $values[AnnotationKeys::YEAR];
+        }
     }
 
     /**
@@ -114,9 +214,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getDayOfMonth()
     {
-        if (isset($this->values[AnnotationKeys::DAY_OF_MONTH])) {
-            return $this->values[AnnotationKeys::DAY_OF_MONTH];
-        }
+        return $this->dayOfMonth;
     }
 
     /**
@@ -126,9 +224,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getDayOfWeek()
     {
-        if (isset($this->values[AnnotationKeys::DAY_OF_WEEK])) {
-            return $this->values[AnnotationKeys::DAY_OF_WEEK];
-        }
+        return $this->dayOfWeek;
     }
 
     /**
@@ -138,9 +234,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getEnd()
     {
-        if (isset($this->values[AnnotationKeys::END])) {
-            return $this->values[AnnotationKeys::END];
-        }
+        return $this->end;
     }
 
     /**
@@ -150,9 +244,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getHour()
     {
-        if (isset($this->values[AnnotationKeys::HOUR])) {
-            return $this->values[AnnotationKeys::HOUR];
-        }
+        return $this->hour;
     }
 
     /**
@@ -162,7 +254,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getMinute()
     {
-        return $this->values[AnnotationKeys::MINUTE];
+        return $this->minute;
     }
 
     /**
@@ -172,9 +264,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getMonth()
     {
-        if (isset($this->values[AnnotationKeys::MONTH])) {
-            return $this->values[AnnotationKeys::MONTH];
-        }
+        return $this->month;
     }
 
     /**
@@ -184,9 +274,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getSecond()
     {
-        if (isset($this->values[AnnotationKeys::SECOND])) {
-            return $this->values[AnnotationKeys::SECOND];
-        }
+        return $this->second;
     }
 
     /**
@@ -196,9 +284,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getStart()
     {
-        if (isset($this->values[AnnotationKeys::START])) {
-            return $this->values[AnnotationKeys::START];
-        }
+        return $this->start;
     }
 
     /**
@@ -208,9 +294,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getTimezone()
     {
-        if (isset($this->values[AnnotationKeys::TIMEZONE])) {
-            return $this->values[AnnotationKeys::TIMEZONE];
-        }
+        return $this->timezone;
     }
 
     /**
@@ -220,9 +304,7 @@ class Schedule extends ReflectionAnnotation
      */
     public function getYear()
     {
-        if (isset($this->values[AnnotationKeys::YEAR])) {
-            return $this->values[AnnotationKeys::YEAR];
-        }
+        return $this->year;
     }
 
     /**

@@ -28,37 +28,10 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS"})
  */
 class Fixture extends AbstractBeanAnnotation
 {
-
-    /**
-     * The annotation to define Doctrine Migration version.
-     *
-     * @var string
-     */
-    const ANNOTATION = 'Fixture';
-
-    /**
-     * This method returns the class name as
-     * a string.
-     *
-     * @return string
-     */
-    public static function __getClass()
-    {
-        return __CLASS__;
-    }
-
-    /**
-     * Returns the value of the name attribute.
-     *
-     * @return string|null The annotations name attribute
-     */
-    public function getName()
-    {
-        if (isset($this->values['name'])) {
-            return $this->values['name'];
-        }
-    }
 }

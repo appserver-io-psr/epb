@@ -28,25 +28,67 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS"})
  */
-class Stateful extends EnterpriseBean
+class Stateful extends AbstractBeanAnnotation
 {
 
     /**
-     * The annotation for stateful session bean.
+     * The value of the bean interface attribute.
      *
      * @var string
      */
-    const ANNOTATION = 'Stateful';
+    protected $beanInterface;
 
     /**
-     * This method returns the class name as
-     * a string.
+     *  The value of the bean name attribute.
      *
-     * @return string
+     * @var string
      */
-    public static function __getClass()
+    protected $beanName;
+
+    /**
+     * The constructor the initializes the instance with the
+     * data passed with the token.
+     *
+     * @param array $values The annotation values
+     */
+    public function __construct(array $values = array())
     {
-        return __CLASS__;
+
+        // set the bean interface attribute, if available
+        if (isset($values[AnnotationKeys::BEAN_INTERFACE])) {
+            $this->beanInterface = $values[AnnotationKeys::BEAN_INTERFACE];
+        }
+
+        // set the bean interface attribute, if available
+        if (isset($values[AnnotationKeys::BEAN_NAME])) {
+            $this->beanName = $values[AnnotationKeys::BEAN_NAME];
+        }
+
+        // pass the values through to the parent constructor
+        parent::__construct($values);
+    }
+
+    /**
+     * Returns the value of the bean interface attribute.
+     *
+     * @return string|null The annotations bean interface attribute
+     */
+    public function getBeanInterface()
+    {
+        return $this->beanInterface;
+    }
+
+    /**
+     * Returns the value of the bean name attribute.
+     *
+     * @return string|null The annotations bean Name attribute
+     */
+    public function getBeanName()
+    {
+        return $this->beanName;
     }
 }

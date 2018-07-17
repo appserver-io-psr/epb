@@ -28,26 +28,84 @@ namespace AppserverIo\Psr\EnterpriseBeans\Annotations;
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      https://github.com/appserver-io-psr/epb
  * @link      http://www.appserver.io
+ *
+ * @Annotation
+ * @Target({"CLASS", "METHOD","PROPERTY"})
  */
 class Inject extends AbstractBeanAnnotation
 {
 
     /**
-     * The annotation for a default timeout method.
+     * The value of the bean name attribute.
      *
      * @var string
      */
-    const ANNOTATION = 'Inject';
+    protected $beanName;
 
     /**
-     * This method returns the class name as
-     * a string.
+     * The value of the factory attribute.
      *
-     * @return string
+     * @var string
      */
-    public static function __getClass()
+    protected $factory;
+
+    /**
+     * The value of the factory method attribute.
+     *
+     * @var string
+     */
+    protected $factoryMethod;
+
+    /**
+     * The value of the factory type attribute.
+     *
+     * @var string
+     */
+    protected $factoryType;
+
+    /**
+     * The value of the type attribute.
+     *
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * The constructor the initializes the instance with the
+     * data passed with the token.
+     *
+     * @param array $values The annotation values
+     */
+    public function __construct(array $values = array())
     {
-        return __CLASS__;
+
+        // set the bean name attribute, if available
+        if (isset($values[AnnotationKeys::BEAN_NAME])) {
+            $this->beanName = $values[AnnotationKeys::BEAN_NAME];
+        }
+
+        // set the type attribute, if available
+        if (isset($values[AnnotationKeys::TYPE])) {
+            $this->type = $values[AnnotationKeys::TYPE];
+        }
+
+        // set the factory attribute, if available
+        if (isset($values[AnnotationKeys::FACTORY])) {
+            $this->factory = $values[AnnotationKeys::FACTORY];
+        }
+
+        // set the factory type attribute, if available
+        if (isset($values[AnnotationKeys::FACTORY_TYPE])) {
+            $this->factoryType = $values[AnnotationKeys::FACTORY_TYPE];
+        }
+
+        // set the factory method attribute, if available
+        if (isset($values[AnnotationKeys::FACTORY_METHOD])) {
+            $this->factoryMethod = $values[AnnotationKeys::FACTORY_METHOD];
+        }
+
+        // pass the values through to the parent constructor
+        parent::__construct($values);
     }
 
     /**
@@ -57,9 +115,7 @@ class Inject extends AbstractBeanAnnotation
      */
     public function getBeanName()
     {
-        if (isset($this->values[AnnotationKeys::BEAN_NAME])) {
-            return $this->values[AnnotationKeys::BEAN_NAME];
-        }
+        return $this->beanName;
     }
 
     /**
@@ -69,9 +125,7 @@ class Inject extends AbstractBeanAnnotation
      */
     public function getType()
     {
-        if (isset($this->values[AnnotationKeys::TYPE])) {
-            return $this->values[AnnotationKeys::TYPE];
-        }
+        return $this->type;
     }
 
     /**
@@ -81,9 +135,7 @@ class Inject extends AbstractBeanAnnotation
      */
     public function getFactory()
     {
-        if (isset($this->values[AnnotationKeys::FACTORY])) {
-            return $this->values[AnnotationKeys::FACTORY];
-        }
+        return $this->factory;
     }
 
     /**
@@ -93,9 +145,7 @@ class Inject extends AbstractBeanAnnotation
      */
     public function getFactoryType()
     {
-        if (isset($this->values[AnnotationKeys::FACTORY_TYPE])) {
-            return $this->values[AnnotationKeys::FACTORY_TYPE];
-        }
+        return $this->factoryType;
     }
 
     /**
@@ -105,8 +155,6 @@ class Inject extends AbstractBeanAnnotation
      */
     public function getFactoryMethod()
     {
-        if (isset($this->values[AnnotationKeys::FACTORY_METHOD])) {
-            return $this->values[AnnotationKeys::FACTORY_METHOD];
-        }
+        return $this->factoryMethod;
     }
 }

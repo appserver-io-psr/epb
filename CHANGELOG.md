@@ -1,3 +1,13 @@
+# Version 7.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Refactor annotations, make them compatible with Doctrine Annotations library
+
 # Version 6.0.1
 
 ## Bugfixes
